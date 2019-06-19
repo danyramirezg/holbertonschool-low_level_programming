@@ -1,4 +1,4 @@
-# Basics C programming
+i Basics C programming
 
 General
 Why C programming is awesome (dont forget to tweet today, with the hashtag #cisfun :))
