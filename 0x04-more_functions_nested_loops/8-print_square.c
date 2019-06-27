@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * print_square - function that prints a square
- * @r: square´s row 
+ * @r: square´s row
  * @c: square´s column
  *
  * Return: void
@@ -16,9 +16,9 @@ _putchar('\n');
 }
 else
 {
-for(r = 1; r <= size; r++)
+for (r = 1; r <= size; r++)
 {
-for(c = 1; c <= size; c++)
+for (c = 1; c <= size; c++)
 {
 _putchar('#');
 }
