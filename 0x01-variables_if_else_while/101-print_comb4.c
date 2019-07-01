@@ -1,27 +1,27 @@
 #include <stdio.h>
 /**
-* main - Entry point
+* main - Prints all possible different combinations of three digits. 
 *
-* Return: Always 0 (Success)
+* Return: void
 */
 int main(void)
 {
         int a = 0;
-        int b_d;
-        int c_d;
-        int d_d;
+	int d;
+	int c;
+	int b;
 
         while (a <= 999)
         {
-                b_d = (a / 100 + '0');
-                c_d = (a / 10 % 10 + '0');
-                d_d = (a % 10 + '0');
+                b = (a / 100 + '0');
+                c = (a / 10 % 10 + '0');
+                d = (a % 10 + '0');
 
-                if ((b_d < c_d) && (c_d < d_d))
+                if ((b < c) && (c < d))
                 {
-                        putchar(b_d);
-                        putchar(c_d);
-                        putchar(d_d);
+                        putchar(b);
+                        putchar(c);
+                        putchar(d);
 
                         if (a != 789)
                         {
