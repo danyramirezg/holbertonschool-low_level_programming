@@ -2,8 +2,9 @@
 #include <stdio.h>
 /**
  * *cap_string - capitalizes all words of a string.
+ * @n: The function's parameter
  *
- * Return: Always 0.
+ * Return: n.
  */
 char *cap_string(char *n)
 {
