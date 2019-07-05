@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * *root13 - Function that encodes a string using rot13
+ * *rot13 - Function that encodes a string using rot13
  * @s: The function's parameter
  *
  * Return: Character s.
