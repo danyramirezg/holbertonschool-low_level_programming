@@ -19,12 +19,16 @@ for (l = 0; accept[l] != 0; l++)
 {
 }
 for (i = 0; i <= l; i++)
+{	
+	for (j = 0; accept[j] != 0; j++)
 {
-for (j = 0; accept[j] != 0; j++)
+		if (s[i] == accept[j])
 {
-if (s[i] == accept[j])
-{
-count++;
+	count++;
+}
+	else if (s[j] == 0)
+	{
+break;
 }
 }
 }
