@@ -9,19 +9,19 @@
 
 void print_chessboard(char (*a)[8])
 {
-	int a, b;
+	int c, b;
 
-	a = b = 0;
-	while (a < 8)
+	c = b = 0;
+	while (c < 8)
 	{
 		b = 0;
 		while (b < 8)
 		{
-			_putchar(a[i][j]);
+			_putchar(a[c][b]);
 		 	b++;
 		}
 		_putchar(10);
-		a++;
+		c++;
 	}
 
 }
