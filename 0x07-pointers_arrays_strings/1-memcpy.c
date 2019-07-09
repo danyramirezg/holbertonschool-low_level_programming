@@ -2,20 +2,19 @@
 #include <stdio.h>
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
+ * *_memcpy - Function that copies memory area
+ * @dest: Parameter to destination memory area
+ * @src: Parameter to source memory area
+ * @n: Number of bytes
  *
- * Return: Nothing.
- */
-#include "holberton.h"
-#include <stdio.h>
-
-/**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
- *
- * Return: Nothing.
+ * Return: dest.
  */
 
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int j;
+
+	for (j = 0; j < n; j++)
+		dest[j] = src[j];
+	return (dest);
+}
