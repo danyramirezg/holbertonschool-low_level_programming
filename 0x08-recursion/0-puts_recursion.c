@@ -3,18 +3,16 @@
 /**
  * _puts_recursion - Function that prints a string.
  * @s: The function´s parameter (Character)
- * 
  *
- * Return: s
+ * Return: Nothing
 */
 void _puts_recursion(char *s)
 {
 _putchar(*s);
-    
-    if (*s != 0)
-    {
-        _puts_recursion(s + 1);
-    }
+if (*s != 0)
+{
+_puts_recursion(s + 1);
+}
 else
 {
 _putchar(10);
