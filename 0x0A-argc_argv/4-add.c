@@ -1,35 +1,49 @@
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
+/**
+ * is_number - checks if is a number
+ * @str: The function's parameter.
+ *
+ * Return: True or false depends of the case.
+ */
+
+bool is_number(char *str)
+{
+int i;
+for (i = 0; str[i] != '\0'; i++)
+{
+if (!isdigit(str[i]))
+{
+return (false);
+}
+}
+return (true);
+}
+
 /**
  * main - Program that adds positive numbers
  * @argc: A count of the arguments.
- * @argv: To refer to an array of strings.
+ * @argv: The function's parameter.
  *
  * Return: 0
  */
+
 int main(int argc, char *argv[])
 {
-	int i, sum, result;
-
-	sum = 0;
-	if (argc < 1)
-		printf("%d\n", 0);
-	while (argc-- && argc > 0)
-	{
-		for (i = 0; argv[argc][i] != '\0'; i++)
-		{
-
-			if (!(isdigit(argv[argc][i])))
-			{
-				printf("Error\n");
-				return (1);
-			}
-		}
-		result = atoi(argv[argc]);
-		sum += result;
-	}
-	printf("%d\n", sum);
-	return (0);
+int i, sum;
+sum = 0;
+for (i = 1; i < argc; i++)
+{
+if (!is_number(argv[i]))
+{
+printf("Error\n");
+return (0);
+}
+sum += atoi(argv[i]);
+}
+printf("%d\n", sum);
+return (0);
 }
