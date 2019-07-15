@@ -7,7 +7,7 @@
  * valid - validates the input
  * @argc: argument count
  * @i: counter for argv[]
- * @j: counter for argv[][]
+ * @k: counter for argv[][]
  * @argv: argument vector
  * Return: 0 or 1.
  */
