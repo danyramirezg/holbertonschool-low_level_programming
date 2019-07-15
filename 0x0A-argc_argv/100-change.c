@@ -11,11 +11,11 @@
  * @argv: argument vector
  * Return: 0 or 1.
  */
-int valid(int argc, int i, unsigned int j, char *argv[])
+int valid(int argc, int i, unsigned int k, char *argv[])
 {
 for (i = 1; i <= argc; i++)
-	for (j = 0; argv[i] != 0 && j < strlen(argv[i]); j++)
-		if (isdigit(argv[i][j]) == 0)
+	for (k = 0; argv[i] != 0 && k < strlen(argv[i]); k++)
+		if (isdigit(argv[i][k]) == 0)
 			return (1);
 return (0);
 }
@@ -35,7 +35,7 @@ if (argc == 2)
 {
 	if (argv[1][0] == '-')
 		printf("0\n");
-	if (checker(argc, 1, 0, argv) == 0)
+	if (valid(argc, 1, 0, argv) == 0)
 	{
 	cents = atoi(argv[1]);
 	for ( ; cents >= 25; coins++, cents -= 25)
