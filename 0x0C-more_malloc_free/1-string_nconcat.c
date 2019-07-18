@@ -24,32 +24,32 @@
 	str++;
 	}
 	return (i);
-	}
-unsigned int min(unsigned int n1, unsigned int n2)
-{
-return (n1 < n2 ? n1 : n2);
 }
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-unsigned int size1, size2, i;
-	int j;
+unsigned int size1, size2, i, j;
 	char *result;
 
 	size1 = size(s1);
-	size2 = min(size(s2), n);
+	size2 = size(s2);
 	result = malloc(size1 + size2 + 1);
+
+if (n >= size2)
+{
+n = size2;
+}
 if (result == NULL)
 {
 return (NULL);
 }
 for (i = 0; i < size1; i++)
 {
-result[j++] = s1[i];
+result[i] = s1[i];
 }
-for (i = 0; i < size2; i++)
+for (j = 0; j < n; j++)
 {
-result[j++] = s2[i];
+result[i + j] = s2[j];
 }
-result[j] = '\0';
+result[i + j] = '\0';
 return (result);
 }
