@@ -38,6 +38,14 @@ if (n >= size2)
 {
 n = size2;
 }
+if (s1 == NULL)
+{
+s1 = "";
+}
+if (s2 == NULL)
+{
+s2 = "";
+}
 if (result == NULL)
 {
 return (NULL);
