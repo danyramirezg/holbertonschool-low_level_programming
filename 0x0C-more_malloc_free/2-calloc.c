@@ -19,7 +19,7 @@ if (nmemb == 0)
 {
 return (NULL);
 }
-	result = malloc(nmemb);
+	result = malloc(nmemb * size);
 	if (result == NULL)
 	{
 	return (NULL);
@@ -29,4 +29,4 @@ return (NULL);
 		result[i] = 0;
 	}
 	return (result);
-	}
+}
