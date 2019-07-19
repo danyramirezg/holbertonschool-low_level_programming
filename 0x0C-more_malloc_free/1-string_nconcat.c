@@ -1,8 +1,7 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-
- /**
+/**
  * size - Find the size of the string
  * @str: Argument for the char
  *
@@ -26,27 +25,23 @@ unsigned int size(char *str)
 	return (i);
 }
 
- /**
- * *string_nconcat - Concatenates two strings
- * @s1: String 1
- * @s2: string 2
- * @n: Unsigned integer
- *
- * Return: The the result
+/**
+ * string_nconcat - concatenate two strings up to n bytes.
+ * @s1: source string
+ * @s2: string to truncate up to n bytes
+ * @n: number of bytes to truncate by
+ * Return: pointer to new buffer
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 unsigned int size1, size2, i, j;
-	char *result;
+char *result;
 
 if (s1 == NULL)
-{
 s1 = "";
-}
 if (s2 == NULL)
-{
 s2 = "";
-}
 
 size1 = size(s1);
 size2 = size(s2);
