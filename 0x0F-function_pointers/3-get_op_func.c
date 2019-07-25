@@ -19,6 +19,7 @@ op_t ops[] = {
 	{NULL, NULL}
 };
 	int i = 0;
+
 	while (i < 5)
 	{
 		if (*ops[i].op == *s && !(*(s + 1)))
