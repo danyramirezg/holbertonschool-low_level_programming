@@ -21,12 +21,14 @@ op_t ops[] = {
 };
 	int i = 0;
 
-	while (i < 5)
+	while (ops[i].op != NULL)
 	{
-		if (*ops[i].op == *s && !(*(s + 1)))
+		if (!strcmp(ops[i].op, s))
+		{
 			return (ops[i].f);
+		}
 		i++;
 
 	}
-	return (NULL);
+	return (ops[i].f);
 }
