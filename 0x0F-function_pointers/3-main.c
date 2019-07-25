@@ -24,11 +24,7 @@ int main(int argc, char *argv[])
 	num2 = atoi(argv[3]);
 	op = (*get_op_func(argv[2]))(num1, num2);
 
-	if (op == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}	
+
 	if (num2 == 0 && (*argv[2] == '%' || *argv[2] == '/'))
 	{
 		printf("Error\n");
