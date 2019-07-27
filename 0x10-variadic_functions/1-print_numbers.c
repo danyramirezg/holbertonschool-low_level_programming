@@ -5,7 +5,7 @@
 /**
  * print_numbers - Prints numbers
  * @separator: String to be printed between numbers
- * @n: Number of integers 
+ * @n: Number of integers
  * Return: Nothing
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -15,18 +15,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	va_start(list, n);
 
-	if (separator == NULL)
-	{
-		return;
-	}
 	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(list, int));
-		if (i < n - 1)
-		{
-			printf(", ");
-		}
+		if (separator != NULL && i != n - 1)
+		printf("%s", separator);
 	}
-	va_end(list);
 	putchar(10);
+va_end(list);
 }
