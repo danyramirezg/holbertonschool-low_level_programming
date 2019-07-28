@@ -30,28 +30,28 @@ const char *print_and_advance(const char *fmt, va_list args)
 {
 	char *str;
 	float f;
-	
+
 	switch (*fmt)
 	{
 	case 'i':
 	printf("%d", va_arg(args, int));
 	break;
 	case 'c':
-	printf("%c", va_arg(args, int));
+	printf("%c", (char) va_arg(args, int));
 	break;
 	case 'f':
 	f = va_arg(args, double);
 	printf("%f", f);
 	break;
-  case 's':
-  str = va_arg(args, char*);
-  if (str == NULL)
-  {
-  printf("(nil)");
-  break;
-  }
-  printf("%s", str);
-  break;
+	case 's':
+	str = va_arg(args, char*);
+	if (str == NULL)
+	{
+	printf("(nil)");
+	break;
+	}
+	printf("%s", str);
+	break;
 }
 
 
@@ -68,6 +68,7 @@ void print_all(const char * const format, ...)
 {
 	const char *fmt = format;
 	va_list args;
+
 	va_start(args, format);
 
 fmt = move_next(fmt);
