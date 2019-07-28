@@ -30,31 +30,29 @@ while (*fmt != '\0' && !(*fmt == 'c' || *fmt == 'i'
 const char *print_and_advance(const char *fmt, va_list args)
 {
 	char *str;
-	
+
 	switch (*fmt)
 	{
 	case 'i':
-	printf("%d",(int) va_arg(args, int));
+	printf("%d", (int) va_arg(args, int));
 	break;
 	case 'c':
 	printf("%c", (char) va_arg(args, int));
 	break;
 	case 'f':
-printf("%f", (double) va_arg(args, double));
-  break;
-  case 's':
-  str = va_arg(args, char*);
-  if (str == NULL)
-  {
-  printf("(nil)");
-  break;
-  }
-  printf("%s", str);
-  break;
+	printf("%f", (double) va_arg(args, double));
+	break;
+	case 's':
+	str = va_arg(args, char*);
+	if (str == NULL)
+	{
+	printf("(nil)");
+	break;
+	}
+	printf("%s", str);
+	break;
 }
-
-
-  return (++fmt);
+	return (++fmt);
 }
 
 /**
@@ -66,19 +64,19 @@ printf("%f", (double) va_arg(args, double));
 
 void print_all(const char * const format, ...)
 {
-const char *fmt = format;
-va_list args;
+	const char *fmt = format;
+	va_list args;
 
-va_start(args, format);
+	va_start(args, format);
 
-while (*(fmt = move_next(fmt)) != '\0')
-{
-fmt = print_and_advance(fmt, args);
-if (*fmt != '\0') 
-{
-printf(", ");
-}
-}
+	while (format != NULL && *(fmt = move_next(fmt)) != '\0')
+	{
+	fmt = print_and_advance(fmt, args);
+	if (*fmt != '\0')
+	{
+		printf(", ");
+	}
+	}
 va_end(args);
 putchar(10);
 }
