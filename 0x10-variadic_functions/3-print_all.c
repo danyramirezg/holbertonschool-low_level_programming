@@ -38,6 +38,7 @@ const char *move_next(const char *fmt)
  */
 const char *print_and_advance(const char *fmt, va_list args)
 {
+	char c;
 	int i;
 	float f;
 	char *str;
@@ -49,8 +50,8 @@ const char *print_and_advance(const char *fmt, va_list args)
 	printf("%d", i);
 	break;
 	case 'c':
-	i = va_arg(args, int);
-	printf("%c", i);
+	c = va_arg(args, int);
+	printf("%c", c);
 	break;
 	case 'f':
 	f = va_arg(args, double);
