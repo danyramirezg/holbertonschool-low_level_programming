@@ -30,34 +30,33 @@ while (*fmt != '\0' && !(*fmt == 'c' || *fmt == 'i'
 const char *print_and_advance(const char *fmt, va_list args)
 {
 	char *str;
-	float f;
-
+	
 	switch (*fmt)
 	{
 	case 'i':
-	printf("%d", va_arg(args, int));
+	printf("%d",(int) va_arg(args, int));
 	break;
 	case 'c':
 	printf("%c", (char) va_arg(args, int));
 	break;
 	case 'f':
-	f = va_arg(args, double);
-	printf("%f", f);
-	break;
-	case 's':
-	str = va_arg(args, char*);
-	if (str == NULL)
-	{
-	printf("(nil)");
-	break;
-	}
-	printf("%s", str);
-	break;
+printf("%f", (double) va_arg(args, double));
+  break;
+  case 's':
+  str = va_arg(args, char*);
+  if (str == NULL)
+  {
+  printf("(nil)");
+  break;
+  }
+  printf("%s", str);
+  break;
 }
 
 
-	return (++fmt);
+  return (++fmt);
 }
+
 /**
  * print_all - Function that prints anything
  * @format: A list of types of arguments
