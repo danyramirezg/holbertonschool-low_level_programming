@@ -15,7 +15,7 @@ bool is_ok(const char fmt)
 }
 
 /**
- * mov_next - To recorre the string
+ * move_next - To through the string.
  * @fmt: The function's parameter
  *
  * Return: The format
@@ -39,7 +39,7 @@ const char *move_next(const char *fmt)
 const char *print_and_advance(const char *fmt, va_list args)
 {
 	int i;
-	double f;
+	float f;
 	char *str;
 
 	switch (*fmt)
