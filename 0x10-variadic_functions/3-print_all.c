@@ -2,17 +2,6 @@
 #include <stdarg.h>
 #include <stdbool.h>
 #include "variadic_functions.h"
-/**
- * is_ok - Function boolean to see if is true or false
- * @fmt: The function's parameter
- *
- * Return: A boolean
- */
-
-bool is_ok(const char fmt)
-{
-	return (fmt == 'c' || fmt == 'i' || fmt == 'f' || fmt == 's');
-}
 
 /**
  * move_next - To through the string.
@@ -22,8 +11,10 @@ bool is_ok(const char fmt)
  */
 const char *move_next(const char *fmt)
 {
-	while (*fmt != '\0' && !is_ok(*fmt))
-	{
+
+while (*fmt != '\0' && !(*fmt == 'c' || *fmt == 'i'
+	|| *fmt == 'f' || *fmt == 's'))
+{
 	fmt++;
 	}
 	return (fmt);
