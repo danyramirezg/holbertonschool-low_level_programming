@@ -29,18 +29,20 @@ while (*fmt != '\0' && !(*fmt == 'c' || *fmt == 'i'
 const char *print_and_advance(const char *fmt, va_list args)
 {
 	char *str;
-
-switch (*fmt)
-{
-  case 'i':
-  printf("%d", va_arg(args, int));
-  break;
-  case 'c':
-  printf("%c", va_arg(args, int));
-  break;
-  case 'f':
-  printf("%f", va_arg(args, double));
-  break;
+	float f;
+	
+	switch (*fmt)
+	{
+	case 'i':
+	printf("%d", va_arg(args, int));
+	break;
+	case 'c':
+	printf("%c", va_arg(args, int));
+	break;
+	case 'f':
+	f = va_arg(args, double);
+	printf("%f", f);
+	break;
   case 's':
   str = va_arg(args, char*);
   if (str == NULL)
