@@ -29,7 +29,6 @@ while (*fmt != '\0' && !(*fmt == 'c' || *fmt == 'i'
  */
 const char *print_and_advance(const char *fmt, va_list args)
 {
-	char c;
 	int i;
 	float f;
 	char *str;
@@ -41,8 +40,8 @@ const char *print_and_advance(const char *fmt, va_list args)
 	printf("%d", i);
 	break;
 	case 'c':
-	c = va_arg(args, int);
-	printf("%c", c);
+	i = va_arg(args, int);
+	printf("%c", i);
 	break;
 	case 'f':
 	f = va_arg(args, double);
