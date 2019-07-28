@@ -66,20 +66,18 @@ printf("%f", (double) va_arg(args, double));
 
 void print_all(const char * const format, ...)
 {
-	const char *fmt = format;
-	va_list args;
+const char *fmt = format;
+va_list args;
 
-	va_start(args, format);
+va_start(args, format);
 
-fmt = move_next(fmt);
-if (*fmt != '\0')
-{
-fmt = print_and_advance(fmt, args);
-}
 while (*(fmt = move_next(fmt)) != '\0')
 {
-printf(", ");
 fmt = print_and_advance(fmt, args);
+if (*fmt != '\0') 
+{
+printf(", ");
+}
 }
 va_end(args);
 putchar(10);
