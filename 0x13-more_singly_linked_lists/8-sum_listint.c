@@ -5,7 +5,6 @@
 /**
 * sum_listint - Returns the sum of all the data (n) of the list
 * @head: Pointer to the list
-* 
 * Return: The sum.
 */
 int sum_listint(listint_t *head)
