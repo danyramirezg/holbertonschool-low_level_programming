@@ -8,23 +8,12 @@
 */
 void print_binary(unsigned long int n)
 {
-	int i = 0, size = 0, var;
-
-	if (n == 0)
-		_putchar('0');
-
-	while (n >> size)
+	if (n < 2)
 	{
-		size++;
+		_putchar(n + '0');
+		return;
 	}
-	for (i = (size - 1); i >= 0; i--)
-	{
-		var = n >> i;
+	print_binary(n >> 1);
 
-		if (var & 1)
-			_putchar('1');
-
-		else
-			_putchar('0');
-	}
+	_putchar((n & 1) + '0');
 }
