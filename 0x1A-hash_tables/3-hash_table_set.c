@@ -5,7 +5,7 @@
 
 /**
  * hash_table_get - Function that adds an element to the hash table.
- * @ht: The hash table to add or update 
+ * @ht: The hash table to add or update
  * @key: Is the key of the function
  * @value: The value
  * Return: Always EXIT_SUCCESS.
@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
-	
+
 	index = key_index((unsigned char *) key, ht->size);
 	list = ht->array[index];
 
@@ -29,7 +29,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			list->value = strdup(value);
 			if (list->value == NULL)
 				return (0);
-			return (1);	
+			return (1);
 		}
 		list = list->next;
 	}
