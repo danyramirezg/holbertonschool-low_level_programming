@@ -40,4 +40,4 @@ void selection_sort(int *array, size_t size)
 		swap(&array[min], &array[i]);
 	print_array(array, size);
 	}
-}	
+}
