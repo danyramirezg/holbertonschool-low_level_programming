@@ -3,7 +3,7 @@
 #include "sort.h"
 
 /**
- * buble_sort - sorts an array of integers in ascending order
+ * bubble_sort - sorts an array of integers in ascending order
  * @array: Array of integers to sort
  * @size: The size of the array to be sorted
  * Return: Sorted array
@@ -12,6 +12,9 @@
 void bubble_sort(int *array, size_t size)
 {
 	unsigned int i, j, temp;
+
+	if (array == NULL || size == 0)
+		return;
 
 	for (i = 1; i <= size; i++)
 	{
