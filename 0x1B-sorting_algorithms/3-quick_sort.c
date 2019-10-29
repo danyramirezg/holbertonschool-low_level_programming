@@ -22,31 +22,60 @@ void swap(int *a, int *b)
  * @last: The last element
  * Return: Nothing
  */
-int partition(int *arr, int min, int last, size_t size) 
+int partition(int *arr, int min, int last, size_t size)
 {
-	int pivot = arr[last];
-	int i = (min - 1);
+	int pivot;
+	int i = (min);
 	int j;
 
-	for (j = min; j < last; j++)
+	if (last < 0)
+		return;
+	pivot = arr[last];
+	for (j = min ; j < last; j++)
 	{
 		if (arr[j] < pivot)
 		{
-			i++;
+
 			swap(&arr[i], &arr[j]);
+
+
+
 			if (i != j)
 				print_array(arr, size);
+
+			i++;
+
 		}
 	}
-	if (pivot < arr[i + 1])
-	{
-		swap(&arr[i + 1], &arr[last]);
-		if (i + 1 != j)
-			print_array(arr, size);
-	}
-	return (i + 1);
 
+	swap(&arr[i], &arr[last]);
+	if (i + 1 != j)
+		print_array(arr, size);
+
+	return (i);
+	}
+
+
+
+void quick_sort_array(int *arr, int min, int last, size_t size)
+{
+
+	int pivot;
+
+	if (min < last)
+	{
+		pivot = partition(arr, min, last, size);
+		quick_sort_array(arr, min, (pivot - 1), size);
+		quick_sort_array(arr, (pivot + 1), last, size);
+	}
 }
+
+//algorithm quicksort(A, lo, hi) is
+//if lo < hi then
+//p := partition(A, lo, hi)
+//quicksort(A, lo, p - 1)
+//quicksort(A, p + 1, hi)
+
 /**
  * main - Entry point
  *
@@ -57,5 +86,5 @@ void quick_sort(int *array, size_t size)
 	if (size < 2)
 		return;
 	
-	partition(array, 0, size - 1, size);
+	quick_sort_array(array, 0, size - 1, size);
 }
