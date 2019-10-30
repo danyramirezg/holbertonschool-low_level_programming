@@ -29,8 +29,15 @@ int partition(int *arr, int min, int last, size_t size)
 	int i = (min);
 	int j;
 
+<<<<<<< HEAD
 	pivot = arr[last];
 	for (j = min; j < last; j++)
+=======
+	if (last < 0)
+		return;
+	pivot = arr[last];
+	for (j = min ; j < last; j++)
+>>>>>>> e59f32a9f78e85442cb0b92c4ee068e3c3709dcf
 	{
 		if (arr[j] < pivot)
 		{
@@ -38,6 +45,10 @@ int partition(int *arr, int min, int last, size_t size)
 			swap(&arr[i], &arr[j]);
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e59f32a9f78e85442cb0b92c4ee068e3c3709dcf
 			if (i != j)
 				print_array(arr, size);
 
@@ -47,6 +58,7 @@ int partition(int *arr, int min, int last, size_t size)
 	}
 
 	swap(&arr[i], &arr[last]);
+<<<<<<< HEAD
 	if (i != j)
 		print_array(arr, size);
 
@@ -74,6 +86,35 @@ void quick_sort_array(int *arr, int min, int last, size_t size)
 	}
 }
 
+=======
+	if (i + 1 != j)
+		print_array(arr, size);
+
+	return (i);
+	}
+
+
+
+void quick_sort_array(int *arr, int min, int last, size_t size)
+{
+
+	int pivot;
+
+	if (min < last)
+	{
+		pivot = partition(arr, min, last, size);
+		quick_sort_array(arr, min, (pivot - 1), size);
+		quick_sort_array(arr, (pivot + 1), last, size);
+	}
+}
+
+//algorithm quicksort(A, lo, hi) is
+//if lo < hi then
+//p := partition(A, lo, hi)
+//quicksort(A, lo, p - 1)
+//quicksort(A, p + 1, hi)
+
+>>>>>>> e59f32a9f78e85442cb0b92c4ee068e3c3709dcf
 /**
  * quick_sort - quick_sort
  * @array: array
@@ -84,6 +125,10 @@ void quick_sort(int *array, size_t size)
 {
 	if (size < 2)
 		return;
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> e59f32a9f78e85442cb0b92c4ee068e3c3709dcf
 	quick_sort_array(array, 0, size - 1, size);
 }
