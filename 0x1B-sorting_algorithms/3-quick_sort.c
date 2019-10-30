@@ -32,7 +32,7 @@ int partition(int *arr, int min, int last, size_t size)
 	pivot = arr[last];
 	for (j = min; j < last; j++)
 	{
-		if (arr[j] < pivot)
+		if (arr[j] <= pivot)
 		{
 
 			swap(&arr[i], &arr[j]);
