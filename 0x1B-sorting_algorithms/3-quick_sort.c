@@ -1,4 +1,4 @@
-#include "sort.h"
+nclude "sort.h"
 
 /**
  * swap - Function that swap two variables.
@@ -20,42 +20,70 @@ void swap(int *a, int *b)
  * @arr: Sorted array
  * @min: The first element
  * @last: The last element
+ * @size: size
  * Return: Nothing
  */
-int partition(int *arr, int min, int last, size_t size) 
+int partition(int *arr, int min, int last, size_t size)
 {
-	int pivot = arr[last];
-	int i = (min - 1);
+	int pivot;
+	int i = (min);
 	int j;
 
+	pivot = arr[last];
 	for (j = min; j < last; j++)
 	{
 		if (arr[j] < pivot)
 		{
-			i++;
+
 			swap(&arr[i], &arr[j]);
+
+
 			if (i != j)
 				print_array(arr, size);
+
+			i++;
+
 		}
 	}
-	if (pivot < arr[i + 1])
-	{
-		swap(&arr[i + 1], &arr[last]);
-		if (i + 1 != j)
-			print_array(arr, size);
-	}
-	return (i + 1);
 
+	swap(&arr[i], &arr[last]);
+	if (i != j)
+		print_array(arr, size);
+
+	return (i);
 }
+
 /**
- * main - Entry point
- *
- * Return: Always 0
+ * quick_sort_array - quick_sort_array
+ * @arr: arr
+ * @min: min
+ * @last: last
+ * @size: size
+ * Return: Nothing
+ */
+void quick_sort_array(int *arr, int min, int last, size_t size)
+{
+
+	int pivot;
+
+	if (min < last)
+	{
+		pivot = partition(arr, min, last, size);
+		quick_sort_array(arr, min, (pivot - 1), size);
+		quick_sort_array(arr, (pivot + 1), last, size);
+	}
+}
+
+/**
+ * quick_sort - quick_sort
+ * @array: array
+ * @size: size
+ * Return: Nothing
  */
 void quick_sort(int *array, size_t size)
 {
 	if (size < 2)
 		return;
-	
-	partition(array, 0, size - 1, size);
+
+	quick_sort_array(array, 0, size - 1, size);
 }
