@@ -1,0 +1,5 @@
+CC := gcc main.c holberton.c -o holberton
+SRC := .c
+all:
+
+	gcc main.c holberton.c -o holberton
