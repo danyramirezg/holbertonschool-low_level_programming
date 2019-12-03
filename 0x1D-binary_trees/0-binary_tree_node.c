@@ -11,5 +11,11 @@
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
+	if (parent == NULL || parent->n == value)
+		return parent;
 
+	if (parent->n < value)
+		return binary_tree_node(parent->right, value);
+
+	return binary_tree_node(root->left, value);
 }
